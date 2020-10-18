@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.saucedemo.interview.mypages.LoginPage;
 import com.saucedemo.interview.mypages.ProductsPage;
 
-public class ProductPageTest extends BaseTest {
+public class ProductPageTestValidUser extends BaseTest {
 
 	@Test(priority=0)
 	public void clicktheProduct() {
@@ -20,25 +20,27 @@ public class ProductPageTest extends BaseTest {
 	@Test(priority=1)
 	public void verifyProductDetailsandAddToCart() {
 		extentTest.get().info("Going to click Addtocart button");
+		product.getAddToCartBtn().click();
+		extentTest.get().info("Clicked the Addtocart button");
 		Assert.assertEquals(product.productDetailsandAddToCart(getPropertyData("productName")), true);
-		extentTest.get().pass("Successfully Addtocart the product");
+		extentTest.get().pass("Successfully Addtocart the product and details of the product is correct.");
 	}
 	
 	@Test(priority=2)
-	public void verifyProductInCart() {
+	public void verifyProductInCart() throws InterruptedException {
 		extentTest.get().info("Going to verify the product in cart");
-		Assert.assertEquals(product.productInCart(), true);
-		extentTest.get().pass("Product present in cart");
+		Assert.assertEquals(product.productInCart(getPropertyData("productName")), true);
+		extentTest.get().pass("Correct product present in cart");
 	}
 	
 	@Test(priority=3)
 	public void verifySortOperation() throws InterruptedException {
-		extentTest.get().info("Click the back button");
-		product.clickBackBtn();
+		product.getCtnShoppingbtn().click();
 		extentTest.get().info("Product page displayed succesfully");
 		product.sortProduct(getPropertyData("sortBy"));
 		extentTest.get().info("Products are sorted by "+ getPropertyData("sortBy"));
 		Assert.assertEquals(product.getInvetoryItemsname("z to a"), true);
 		extentTest.get().pass("Products are sorted successfully");
 	}
+	
 }

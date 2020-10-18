@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.apache.commons.collections4.map.HashedMap;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,9 +28,11 @@ public class ProductsPage extends BasePage {
 	private By inventoryName = By.className("inventory_details_name");
 	private By addToCartBtn = By.xpath("//button[text()='ADD TO CART']");
 	private By removeCartBtn = By.xpath("//button[text()='REMOVE']");
-	private By cartIcon = By.xpath("//div[@id='shopping_cart_container']//span");
+	private By cartIconCount = By.xpath("//div[@id='shopping_cart_container']//span");
 	private By backBtn = By.xpath("//button[@class='inventory_details_back_button']");
 	private By sortDropdown = By.xpath("//select[@class='product_sort_container']");
+	private By ctnShoppingbtn = By.xpath("//a[text()='Continue Shopping']");
+	private By imgEle = By.xpath("//img[@class='inventory_item_img']");	
 
 	public WebElement getHumburgerIcon() {
 		return getElement(humburgerIcon);
@@ -46,6 +53,14 @@ public class ProductsPage extends BasePage {
 	public List<WebElement> getInventoryProdName() {
 		return getElements(inventoryProdName);
 	}
+	
+	public List<WebElement> getImageEles() {
+		return getElements(imgEle);
+	}
+	
+	public WebElement getInventoryProdNameCartPage() {
+		return getElement(inventoryProdName);
+	}
 
 	public WebElement getAddToCartBtn() {
 		return getElement(addToCartBtn);
@@ -55,8 +70,12 @@ public class ProductsPage extends BasePage {
 		return getElement(removeCartBtn);
 	}
 
-	public WebElement getCartIcon() {
-		return getElement(cartIcon);
+	public WebElement getCartIconCount() {
+		return getElement(cartIconCount);
+	}
+	
+	public WebElement getCtnShoppingbtn() {
+		return getElement(ctnShoppingbtn);
 	}
 
 	public WebElement getBackBtn() {
@@ -130,25 +149,59 @@ public class ProductsPage extends BasePage {
 
 	// --Add to card function--//
 	public boolean productDetailsandAddToCart(String itemNameToCart) {
-		if (getInventoryName().getText().equals(itemNameToCart)) {
-			getAddToCartBtn().click();
+
+		if (getInventoryName().getText().equals(itemNameToCart))
 			return true;
-		} else
+		else 
 			return false;
 	}
 
-	// --Add to card function--//
-	public boolean productInCart() {
-		if (getCartIcon().getText().equals("1"))
-			return true;
-		else
-			return false;
+	
+	  // --Verify the cart product is correct function--// 
+	public boolean productInCart(String itemNameToCart) throws InterruptedException { 
+		if(getCartIconCount().getText().equals("1")) {
+			driver.get("https://www.saucedemo.com/cart.html");
+			Thread.sleep(1000);
+			if(getInventoryProdNameCartPage().getText().equals(itemNameToCart)) {
+				return true;
+			}
+			else {
+				return false;
+			}
+	  } else 
+		  return false; 
 	}
+	 
 
 	public void sortProduct(String sortBy) throws InterruptedException {
 		listSelect(getSortDropdown(), sortBy);
 		Thread.sleep(3000);
 
+	}
+	
+	//To verify images on the page is broken
+	public boolean verifyImageStatus() {
+		List<WebElement> images = getImageEles();
+		HttpClient client;
+		HttpGet request;
+		HttpResponse response;
+		int invalidImageCount=0;
+		for(WebElement image:images) {
+		try {
+			client = HttpClientBuilder.create().build();
+			request = new HttpGet(image.getAttribute("src"));
+			response = client.execute(request);
+			if (response.getStatusLine().getStatusCode() != 200)
+				invalidImageCount++;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		}
+		if(invalidImageCount==images.size()) {
+			return false;
+		}
+		else
+			return true;
 	}
 
 }
