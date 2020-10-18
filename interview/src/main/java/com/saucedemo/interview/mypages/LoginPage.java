@@ -32,7 +32,9 @@ public class LoginPage extends BasePage{
 	}
 	
 	public ProductsPage doLogin(String username, String password) {
+		getUsername().clear();
 		getUsername().sendKeys(username);
+		getPassword().clear();
 		getPassword().sendKeys(password);
 		getLoginBtn().click();
 		return getInstance(ProductsPage.class);

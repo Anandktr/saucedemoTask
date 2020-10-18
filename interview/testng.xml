@@ -9,6 +9,7 @@
 		<parameter name="browser" value="chrome" />  <!-- value can be chrome/ff -->
 		<classes>
 			<class name="com.saucedemo.interview.mypagestest.LoginTest" />
+			<class name="com.saucedemo.interview.mypagestest.ProductPageTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

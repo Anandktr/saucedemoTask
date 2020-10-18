@@ -125,7 +125,6 @@ public class MyListeners implements ITestListener {
 		reports.attachReporter(htmlReporter);
 		reports.setSystemInfo("Hostname", "Anandh - PC");
 		reports.setSystemInfo("Tester Name", "Anandh");
-
 	}
 
 	public void onFinish(ITestContext context) {

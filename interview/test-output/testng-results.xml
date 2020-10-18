@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-16T13:28:03 IST" name="Suite" finished-at="2020-10-16T13:28:35 IST" duration-ms="31732">
+  <suite started-at="2020-10-18T10:05:44 IST" name="Suite" finished-at="2020-10-18T10:06:33 IST" duration-ms="49210">
     <groups>
     </groups>
-    <test started-at="2020-10-16T13:28:03 IST" name="Test" finished-at="2020-10-16T13:28:35 IST" duration-ms="31732">
+    <test started-at="2020-10-18T10:05:44 IST" name="Test" finished-at="2020-10-18T10:06:33 IST" duration-ms="49210">
       <class name="com.saucedemo.interview.mypagestest.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:04 IST" name="setup" finished-at="2020-10-16T13:28:11 IST" duration-ms="7233" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@19d481b]" started-at="2020-10-18T10:05:44 IST" name="setup" finished-at="2020-10-18T10:06:01 IST" duration-ms="16123" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,53 +18,56 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginWithoutUserNameandPassword()[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:11 IST" name="loginWithoutUserNameandPassword" finished-at="2020-10-16T13:28:12 IST" duration-ms="732" status="PASS">
+        <test-method signature="loginWithoutUserNameandPassword()[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@19d481b]" started-at="2020-10-18T10:06:01 IST" name="loginWithoutUserNameandPassword" finished-at="2020-10-18T10:06:02 IST" duration-ms="967" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithoutUserNameandPassword -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:12 IST" name="teardown" finished-at="2020-10-16T13:28:14 IST" duration-ms="2100" status="PASS">
+        <test-method signature="loginwithInvalidCredentials()[pri:1, instance:com.saucedemo.interview.mypagestest.LoginTest@19d481b]" started-at="2020-10-18T10:06:02 IST" name="loginwithInvalidCredentials" finished-at="2020-10-18T10:06:02 IST" duration-ms="494" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:14 IST" name="setup" finished-at="2020-10-16T13:28:20 IST" duration-ms="6085" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- loginwithInvalidCredentials -->
+        <test-method signature="loginwithValidCredentials()[pri:2, instance:com.saucedemo.interview.mypagestest.LoginTest@19d481b]" started-at="2020-10-18T10:06:02 IST" name="loginwithValidCredentials" finished-at="2020-10-18T10:06:12 IST" duration-ms="9593" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginInvalid()[pri:1, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:20 IST" name="loginInvalid" finished-at="2020-10-16T13:28:20 IST" duration-ms="433" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginInvalid -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:20 IST" name="teardown" finished-at="2020-10-16T13:28:21 IST" duration-ms="1083" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:21 IST" name="setup" finished-at="2020-10-16T13:28:28 IST" duration-ms="6256" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginValid()[pri:2, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:28 IST" name="loginValid" finished-at="2020-10-16T13:28:33 IST" duration-ms="5833" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginValid -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@55b53d44]" started-at="2020-10-16T13:28:33 IST" name="teardown" finished-at="2020-10-16T13:28:35 IST" duration-ms="1660" status="PASS">
+        </test-method> <!-- loginwithValidCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.saucedemo.interview.mypagestest.LoginTest@19d481b]" started-at="2020-10-18T10:06:12 IST" name="teardown" finished-at="2020-10-18T10:06:13 IST" duration-ms="1710" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.saucedemo.interview.mypagestest.LoginTest -->
+      <class name="com.saucedemo.interview.mypagestest.ProductPageTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.saucedemo.interview.mypagestest.ProductPageTest@1f97cf0d]" started-at="2020-10-18T10:06:13 IST" name="setup" finished-at="2020-10-18T10:06:20 IST" duration-ms="6994" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="clicktheProduct()[pri:0, instance:com.saucedemo.interview.mypagestest.ProductPageTest@1f97cf0d]" started-at="2020-10-18T10:06:20 IST" name="clicktheProduct" finished-at="2020-10-18T10:06:27 IST" duration-ms="6927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clicktheProduct -->
+        <test-method signature="verifyProductDetailsandAddToCart()[pri:1, instance:com.saucedemo.interview.mypagestest.ProductPageTest@1f97cf0d]" started-at="2020-10-18T10:06:27 IST" name="verifyProductDetailsandAddToCart" finished-at="2020-10-18T10:06:27 IST" duration-ms="162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductDetailsandAddToCart -->
+        <test-method signature="verifyProductInCart()[pri:2, instance:com.saucedemo.interview.mypagestest.ProductPageTest@1f97cf0d]" started-at="2020-10-18T10:06:27 IST" name="verifyProductInCart" finished-at="2020-10-18T10:06:27 IST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductInCart -->
+        <test-method signature="verifySortOperation()[pri:3, instance:com.saucedemo.interview.mypagestest.ProductPageTest@1f97cf0d]" started-at="2020-10-18T10:06:28 IST" name="verifySortOperation" finished-at="2020-10-18T10:06:31 IST" duration-ms="3701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySortOperation -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.saucedemo.interview.mypagestest.ProductPageTest@1f97cf0d]" started-at="2020-10-18T10:06:31 IST" name="teardown" finished-at="2020-10-18T10:06:33 IST" duration-ms="1959" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.saucedemo.interview.mypagestest.ProductPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

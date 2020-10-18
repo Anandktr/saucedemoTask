@@ -1,6 +1,7 @@
 package com.saucedemo.interview.mypages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -8,10 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class Page {
 	static WebDriver driver;
 	WebDriverWait wait;
+	JavascriptExecutor js;
 
 	public Page(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, 30);
+		this.js = (JavascriptExecutor) driver;
 	}
 
 	public abstract String getPageTitle();
